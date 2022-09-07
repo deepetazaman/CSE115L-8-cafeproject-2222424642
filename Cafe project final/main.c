@@ -5,6 +5,7 @@
 #include <windows.h>
 
 int token=0, tokens[60], payment_counter=0;
+
 struct user
 {
     char username[20];
@@ -64,40 +65,41 @@ int menu_order()
     int arNo[30],decision,arquantity[30],bill[30],counter=0;
     work:
         system("cls");
-        printf("\n\t\t\t\tMenu\n\t\t\t\t----------\n");
+        printf("\n\t\t\t   Menu\n\t\t\t----------\n");
         printf("\n\tHOT BEVERAGES :\n\n");
-        printf("\t1. Espresso ..............................120/=\t  \n");
-        printf("\t2. Latte Macchiato.............................. 40/=\n");
-        printf("\t3. Americano...............................  70/=\t \n");
-        printf("\t4. Cappuccino ..........................  90/=\t \n");
-        printf("\t5. Caramel Cappuccino ..........  90/=\t \n");
-        printf("\t6. Cafe Latte ...................  90/=\n");
-        printf("\t7. Mocha ....................  65/=\n");
-        printf("\t8. Caramel Macchiato ..........  90/=\t \n");
-        printf("\t9. Hazelnut Latte ..........  90/=\t \n");
-        printf("\t10.White Chocolate ..........  90/=\t \n");
-        printf("\t11.Hot Chocolate ..........  90/=\t \n");
-        printf("\t12. Affogato ........................  65/=\t  \n");
-        printf("\t13.  Irish coffee ..........  90/=\t \n");
-        printf("\t14. Turkish coffee ..........  90/=\t \n");
+        printf("\t1. Espresso ..............................  120/=\n");
+        printf("\t2. Latte Macchiato .......................  220/=\n");
+        printf("\t3. Americano .............................  110/=\n");
+        printf("\t4. Cappuccino ............................  100/=\n");
+        printf("\t5. Caramel Cappuccino ....................  130/=\n");
+        printf("\t6. Cafe Latte ............................  200/=\n");
+        printf("\t7. Mocha .................................  130/=\n");
+        printf("\t8. Caramel Macchiato .....................  230/=\n");
+        printf("\t9. Hazelnut Latte ........................  140/=\n");
+        printf("\t10.White Chocolate .......................  150/=\n");
+        printf("\t11.Hot Chocolate .........................  110/=\n");
+        printf("\t12. Affogato .............................  165/=\n");
+        printf("\t13.  Irish coffee ........................  180/=\n");
+        printf("\t14. Turkish coffee .......................  210/=\n");
         printf("\n\tCOLD BEVERAGES :\n\t\t\t\t\t\t\t \n");
-        printf("\t15. Iced Latte ........................  65/=\t  \n");
-        printf("\t16. Iced Coffee(regular) ........................... 230/=\t \n");
-        printf("\t17. Choco Mint ..........  90/=\t \n");
-        printf("\t18. Oreo Cappuccino ..........  90/=\t \n");
-        printf("\t19. Frappe  ..........  90/=\t \n");
-        printf("\t20. Iced Mocha ..........  90/=\t \n");
-        printf("\t21. Iced Macchiata ..........  90/=\t \n");
+        printf("\t15. Iced Latte ...........................  200/=\n");
+        printf("\t16. Iced Coffee(regular) .................  90/=\n");
+        printf("\t17. Choco Mint ...........................  130/=\n");
+        printf("\t18. Oreo Cappuccino ......................  220/=\n");
+        printf("\t19. Frappe ...............................  190/=\n");
+        printf("\t20. Iced Mocha ...........................  150/=\n");
+        printf("\t21. Iced Macchiata .......................  220/=\n");
         printf("\n\tDESSERTS :\n\n");
-        printf("\t22. Brownie ..........  90/=\t \n");
-        printf("\t23. Apple Pie ..........  90/=\t \n");
-        printf("\t24. Chocolate Cake ..........  90/=\t \n");
-        printf("\t25. Tiramisu ..........  90/=\t \n");
-        printf("\t26. Cheesecake ..........  90/=\t \n");
-        printf("\t27. Glazed Donut ..........  90/=\t \n");
-        printf("\t28. Cookies ..........  90/=\t \n");
-        printf("\t29. Chocolate Ice-cream ..........  90/=\t \n");
-        printf("\t30. Vanilla Ice-cream..........  90/=\t \n");
+        printf("\t22. Brownie ..............................  80/=\n");
+        printf("\t23. Apple Pie ............................  90/=\n");
+        printf("\t24. Chocolate Cake .......................  80/=\n");
+        printf("\t25. Tiramisu .............................  110/=\n");
+        printf("\t26. Cheesecake ...........................  100/=\n");
+        printf("\t27. Glazed Donut .........................  50/=\n");
+        printf("\t28. Cookies ..............................  60/=\n");
+        printf("\t29. Chocolate Ice-cream ..................  60/=\n");
+        printf("\t30. Vanilla Ice-cream.....................  50/=\n");
+        printf("\n\n\tOrder your item: (Enter 0 to finish order)\n");
         for(;;)
         {
             counter++;
@@ -111,7 +113,7 @@ int menu_order()
             scanf("%d", &arquantity[counter-1]);
         }
         system("cls");
-        printf("\n\n\n\n\n\n\n\n\n\n\t\tThank you for ordering!\n\n\n\n\n\n\t\t\t <Enter 1 for your bill>\n\t\t\tEnter your choice: ");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\tThank you for ordering!\n\n\n\n\n\n\t\t\t <Press (1) for your bill>\n\t\t\tEnter your choice: ");
         scanf("%d", &decision);
         printf("\n\n\n\n\n\n\n\n");
 
@@ -119,7 +121,7 @@ int menu_order()
 
         if(decision==1)
         {
-            Bill_show(arNo,arquantity,counter);
+            Bill_presenting(arNo,arquantity,counter);
         }
         else if(decision==2)
         {
@@ -131,19 +133,19 @@ int menu_order()
         }
 }
 
-void Bill_show(int arNo[], int arquantity[], int counter)
+void Bill_presenting(int arNo[], int arquantity[], int counter)
 {
     int n;
     system("cls");
     int i, sum=0;
-    int costs[30]={                     }
-    char items[30][]={"Espresso","Latte Macchiato","Americano","Cappuccino","Caramel Capuccino","Cafe Latte","Mocha","Caramel Macchiato","Hazelnut Latte","White Chocolate","Hot Chocolate","Affogato","Irish Coffee","Turkish Coffee","Iced Latte","Iced Coffee","Choco Mint","Oreo Cappuccino","Frappe","Iced Mocha","Iced Macchiata","Brownie","Apple Pie","Chocolate Cake","Tiramisu","Cheesecake","Glazed Donut","Cookies","Chocolate Ice-cream","Vanilla Ice-cream"};
-    printf("\n\nYour Bill Total:\n\n\n\t\tItem(s)\t\t    Item Quantity\t\t      Price\n\n\n\n");
+    int costs[30]={120,220,110,100,130,200,130,230,140,150,110,165,180,210,200,90,130,220,190,150,220,80,90,80,110,100,50,60,60,50};
+    char items[30][50]={"Espresso","Latte Macchiato","Americano","Cappuccino","Caramel Capuccino","Cafe Latte","Mocha","Caramel Macchiato","Hazelnut Latte","White Chocolate","Hot Chocolate","Affogato","Irish Coffee","Turkish Coffee","Iced Latte","Iced Coffee","Choco Mint","Oreo Cappuccino","Frappe","Iced Mocha","Iced Macchiata","Brownie","Apple Pie","Chocolate Cake","Tiramisu","Cheesecake","Glazed Donut","Cookies","Chocolate Ice-cream","Vanilla Ice-cream"};
+    printf("\n\nYour Bill Total:\n\n\n\t\tItem(s)\t\t    Item Quantity\t\t    Price\n\n\n\n");
 
     for(i=0;i,counter;i++)
     {
-        printf("\t%2d. %-16s ________\t%-5d piece(s) ____ %7d\n",i+1,items[arNo[i]-1],arquantity[i],arquantity[i]*prices[arNo[i]-1]);
-        sum=sum+(prices[arNo[i]-1]*arquantity[i]);
+        printf("      %2d. %-16s ---------   %d piece(s)  ----------  %7d\n",i+1,items[arNo[i]-1],arquantity[i],arquantity[i]*costs[arNo[i]-1]);
+        sum=sum+(costs[arNo[i]-1]*arquantity[i]);
     }
 
     printf("n\n\n\n\t\t\t\t\t\t\t\t  Gross Total = %d\n\n\n\n",sum);
@@ -161,7 +163,75 @@ void Bill_show(int arNo[], int arquantity[], int counter)
     }
 }
 
-void Bill_Show()
+void Bill_Payment()
+{
+    int k,i,n,changer,cash;
+    redo:
+    payment_counter++;
+    system("cls");
+    printf("\n\n\n\t\t\tEnter your token number: ");
+    scanf("%d",&k);
+    printf("\t\t\tYour Gross Total Bill = %d",tokens[k]);
+    work:
+        printf("\n\t\t\tPay your Bill: ");
+        scanf("%d",&cash);
+        changer = cash-tokens[k];
+        if(changer == 0)
+        {
+            printf("\n\t\tThank you for your payment! Have a great day ahead!\n");
+        }
+        else if (changer<0)
+            {
+                system("cls");
+                printf("\n\t\t\tAmount is insufficient. :(\n\t\tPlease pay the fair price of your bill\n");
+                goto work;
+            }
+            else
+            {
+                 printf("\n\n\n\t\tReturned Amount: (%d-%d) = %d Tk.\n\t\t  ",cash,tokens[k],changer);
+
+            printf("-------------------------------------------------------------\n");
+
+            if(changer>=1000 )
+                {printf("\n\t\t1000 Tk. note(s) = %d\n",changer/1000);
+                changer=changer%1000;}
+            if(changer>=500 && changer<1000)
+            {printf("\n\t\t 500 Tk. note(s) = %d\n",changer/500);
+            changer=changer%500;}
+            if(changer>=100 && changer<500)
+            {printf("\n\t\t 100 Tk. note(s) = %d\n",changer/100);
+            changer= changer%100;}
+            if(changer>=50 && changer<100)
+            {printf("\n\t\t  50 Tk. note(s) = %d\n",changer/50);
+            changer=changer%50;}
+             if(changer>=10 && changer<50)
+            {printf("\n\t\t  10 Tk. note(s) = %d\n",changer/10);
+            changer=changer%10;}
+            if(changer>=5 && changer<10)
+            {printf("\n\t\t   5 Tk. note(s) = %d\n",changer/5);
+            changer=changer%5;}
+            if(changer>=2 && changer<5)
+            {printf("\n\t\t   2 Tk. note(s) = %d\n",changer/2);
+            changer=changer%2;}
+            if(changer>=1 && changer<2)
+            {printf("\n\t\t   1 Tk. note(s) = %d\n",changer/1);
+            changer=changer%1;}
+
+            printf("\t\t  ");
+            printf("-------------------------------------------------------------\n");
+            printf("\n\n\n\n\n\n\t\t\tThank you for your payment!\n\t\t   Have a great day ahead!\n",changer);
+}
+printf("\n\n\t\t\t<Press (1) to pay another bill.>\n\t\t\t<Press (2) to go back to Main Menu Bar>\n\n\n\t\t\tEnter your choice: \t");
+scanf("%d",&n);
+if(n==2)
+{
+    main();
+}
+else if(n==1)
+{
+    goto redo;
+}
+}
 
 int main()
 {
