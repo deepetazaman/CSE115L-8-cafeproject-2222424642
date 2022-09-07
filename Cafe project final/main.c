@@ -15,6 +15,8 @@ struct user s[2] = {{"Orpa", "1253314"}, {"Deepeta", "424642"}};
 
 int login()
 {
+    system("cls");
+    system("color 0D");
     printf("=====Login=====\n\n");
 
     char name[20];
@@ -37,8 +39,9 @@ int main_sheet()
 {
     int i;
     system("cls");
+    system("color FD");
 
-    printf("\n\n\n\n\n\t\t=========== Welcome to Brew That: Coffee Shop! =========== \n\t\t\t\t\t\t\t\n\n");
+    printf("\n\n\n\n\n\t\t=========== Welcome to Brew That: Coffee Shop <3! =========== \n\t\t\t\t\t\t\t\n\n");
 
     printf("                   _______________________________________________ \n");
     printf("                    ---------------------------------------------  \n");
@@ -65,21 +68,22 @@ int menu_order()
     int arNo[30],decision,arquantity[30],bill[30],counter=0;
     work:
         system("cls");
+        system("color 0E");
         printf("\n\t\t\t   Menu\n\t\t\t----------\n");
         printf("\n\tHOT BEVERAGES :\n\n");
-        printf("\t1. Espresso ..............................  120/=\n");
-        printf("\t2. Latte Macchiato .......................  220/=\n");
-        printf("\t3. Americano .............................  110/=\n");
-        printf("\t4. Cappuccino ............................  100/=\n");
-        printf("\t5. Caramel Cappuccino ....................  130/=\n");
-        printf("\t6. Cafe Latte ............................  200/=\n");
-        printf("\t7. Mocha .................................  130/=\n");
-        printf("\t8. Caramel Macchiato .....................  230/=\n");
-        printf("\t9. Hazelnut Latte ........................  140/=\n");
-        printf("\t10.White Chocolate .......................  150/=\n");
-        printf("\t11.Hot Chocolate .........................  110/=\n");
+        printf("\t1.  Espresso .............................  120/=\n");
+        printf("\t2.  Latte Macchiato ......................  220/=\n");
+        printf("\t3.  Americano ............................  110/=\n");
+        printf("\t4.  Cappuccino ...........................  100/=\n");
+        printf("\t5.  Caramel Cappuccino ...................  130/=\n");
+        printf("\t6.  Cafe Latte ...........................  200/=\n");
+        printf("\t7.  Mocha ................................  130/=\n");
+        printf("\t8.  Caramel Macchiato ....................  230/=\n");
+        printf("\t9.  Hazelnut Latte .......................  140/=\n");
+        printf("\t10. White Chocolate ......................  150/=\n");
+        printf("\t11. Hot Chocolate ........................  110/=\n");
         printf("\t12. Affogato .............................  165/=\n");
-        printf("\t13.  Irish coffee ........................  180/=\n");
+        printf("\t13. Irish coffee .........................  180/=\n");
         printf("\t14. Turkish coffee .......................  210/=\n");
         printf("\n\tCOLD BEVERAGES :\n\t\t\t\t\t\t\t \n");
         printf("\t15. Iced Latte ...........................  200/=\n");
@@ -113,6 +117,7 @@ int menu_order()
             scanf("%d", &arquantity[counter-1]);
         }
         system("cls");
+        system("color D0");
         printf("\n\n\n\n\n\n\n\n\n\n\t\tThank you for ordering!\n\n\n\n\n\n\t\t\t <Press (1) for your bill>\n\t\t\tEnter your choice: ");
         scanf("%d", &decision);
         printf("\n\n\n\n\n\n\n\n");
@@ -121,7 +126,7 @@ int menu_order()
 
         if(decision==1)
         {
-            Bill_presenting(arNo,arquantity,counter);
+            Bill_show(arNo,arquantity,counter);
         }
         else if(decision==2)
         {
@@ -133,27 +138,29 @@ int menu_order()
         }
 }
 
-void Bill_presenting(int arNo[], int arquantity[], int counter)
+void Bill_show(int arNo[], int arquantity[], int counter)
 {
     int n;
     system("cls");
+    system("color B0");
     int i, sum=0;
     int costs[30]={120,220,110,100,130,200,130,230,140,150,110,165,180,210,200,90,130,220,190,150,220,80,90,80,110,100,50,60,60,50};
     char items[30][50]={"Espresso","Latte Macchiato","Americano","Cappuccino","Caramel Capuccino","Cafe Latte","Mocha","Caramel Macchiato","Hazelnut Latte","White Chocolate","Hot Chocolate","Affogato","Irish Coffee","Turkish Coffee","Iced Latte","Iced Coffee","Choco Mint","Oreo Cappuccino","Frappe","Iced Mocha","Iced Macchiata","Brownie","Apple Pie","Chocolate Cake","Tiramisu","Cheesecake","Glazed Donut","Cookies","Chocolate Ice-cream","Vanilla Ice-cream"};
-    printf("\n\nYour Bill Total:\n\n\n\t\tItem(s)\t\t    Item Quantity\t\t    Price\n\n\n\n");
+    printf("\n\nYour Bill Total:\n\n\n\t\tItem(s)\t\t    Item Quantity\t\t    Cost\n\n\n\n");
 
-    for(i=0;i,counter;i++)
+    for(i=0;i<counter;i++)
     {
         printf("      %2d. %-16s ---------   %d piece(s)  ----------  %7d\n",i+1,items[arNo[i]-1],arquantity[i],arquantity[i]*costs[arNo[i]-1]);
         sum=sum+(costs[arNo[i]-1]*arquantity[i]);
     }
 
-    printf("n\n\n\n\t\t\t\t\t\t\t\t  Gross Total = %d\n\n\n\n",sum);
-    token++;
+    printf("n\n\n\n\t\t\t  Gross Total = %d\n\n\n\n",sum);
+    token ++;
     tokens[token]=sum;
-    printf("\tYour token no. is %d. Please use and show this provided token while paying your bill!\n\n\n\n\n\t\t\t<Press (1) to order again>\n\n\t\t\t<Press (2) to go to Main Menu Bar>\n\n\t\n\t\t\tEnter your choice: ",token);
+    printf("\tYour Token number= %d.\n\tPlease use and show this provided token while paying your bill!\n\n\n\n\n\t\t\t<Press (1) to order again>\n\n\t\t\t<Press (2) to go to Main Menu Bar>\n\n\t\n\t\t\tEnter your choice: ",token);
     scanf("%d", &n);
-    if(n==0)
+    printf("\n\n\n");
+    if(n==1)
     {
         menu_order();
     }
@@ -165,13 +172,14 @@ void Bill_presenting(int arNo[], int arquantity[], int counter)
 
 void Bill_Payment()
 {
-    int k,i,n,changer,cash;
+    int k,i,cash,changer,n;
     redo:
     payment_counter++;
     system("cls");
+    system("color 3F");
     printf("\n\n\n\t\t\tEnter your token number: ");
     scanf("%d",&k);
-    printf("\t\t\tYour Gross Total Bill = %d",tokens[k]);
+    printf("\t\t\tYour Gross Total Bill =%d",tokens[k]);
     work:
         printf("\n\t\t\tPay your Bill: ");
         scanf("%d",&cash);
@@ -235,6 +243,8 @@ else if(n==1)
 
 int main()
 {
+    system("cls");
+    system("color F0");
     printf("o.oOOOoo                              oOoOOoOOo o                  \n");
     printf(" o     o                                  o     O                  \n");
     printf(" O     O                                  o     o              O   \n");
@@ -268,7 +278,7 @@ int main()
         else
             printf("\nLogin Unsuccessful.\n\nPlease Enter a valid username and password.\n\n");
     }
-    sleep(2);
+    sleep(1);
 
 
     int k,j,n,d;
