@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1662565997 source:c:\users\user\documents\cse project\cse115l-8-cafeproject-2222424642\cafe project final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<windows.h>
+
