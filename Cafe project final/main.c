@@ -40,12 +40,12 @@ int main_sheet()
     system("cls");
     system("color 0D");
 
-    printf("\n\n\n\n\n\t\t===========              Welcome                =========== \n\t\t\t\t\t\t\t\n\n");
-    printf("\n\n\n\n\n\t\t===========                To                   =========== \n\t\t\t\t\t\t\t\n\n");
-    printf("\n\n\n\n\n\t\t===========      BREW THAT: COFFEE SHOP <3!     =========== \n\t\t\t\t\t\t\t\n\n");
+    printf("\n\n\n\n\n              ===========              Welcome                =========== \n");
+    printf("              ===========                 To                  =========== \n");
+    printf("              ===========      BREW THAT: COFFEE SHOP <3!     =========== \n");
 
 
-    printf("                   _______________________________________________ \n");
+    printf("\n                   _______________________________________________ \n");
     printf("                    ---------------------------------------------  \n");
     printf("                   |                                             | \n");
     printf("                   |   Please select any of the options below:-  | \n");
@@ -73,7 +73,7 @@ int menu_order()
     work:
         system("cls");
         system("color 0F");
-        printf("\n\t\t\t   Menu\n\t\t\t----------\n");
+        printf("\n\n\t\t\t   Menu\n\t\t\t----------\n");
         printf("\n\tHOT BEVERAGES :\n\n");
         printf("\t1.  Espresso .............................  120/=\n");
         printf("\t2.  Latte Macchiato ......................  220/=\n");
@@ -87,26 +87,26 @@ int menu_order()
         printf("\t10. Affogato .............................  165/=\n");
         printf("\t11. Irish coffee .........................  180/=\n");
         printf("\t12. Turkish coffee .......................  210/=\n");
-        printf("\t11. Hot Chocolate ........................  100/=\n");
-        printf("\t12. White Chocolate ......................  110/=\n");
+        printf("\t13. Hot Chocolate ........................  100/=\n");
+        printf("\t14. White Chocolate ......................  110/=\n");
         printf("\n\tCOLD BEVERAGES :\n\t\t\t\t\t\t\t \n");
-        printf("\t13. Iced Latte ...........................  200/=\n");
-        printf("\t14. Iced Coffee(regular) .................  90/=\n");
-        printf("\t15. Choco Mint ...........................  130/=\n");
-        printf("\t16. Oreo Cappuccino ......................  220/=\n");
-        printf("\t17. Frappe ...............................  190/=\n");
-        printf("\t18. Iced Mocha ...........................  150/=\n");
-        printf("\t19. Iced Macchiata .......................  220/=\n");
+        printf("\t15. Iced Latte ...........................  200/=\n");
+        printf("\t16. Iced Coffee(regular) .................  90/=\n");
+        printf("\t17. Choco Mint ...........................  130/=\n");
+        printf("\t18. Oreo Cappuccino ......................  220/=\n");
+        printf("\t19. Frappe ...............................  190/=\n");
+        printf("\t20. Iced Mocha ...........................  150/=\n");
+        printf("\t21. Iced Macchiata .......................  220/=\n");
         printf("\n\tDESSERTS :\n\n");
-        printf("\t20. Brownie ..............................  80/=\n");
-        printf("\t21. Apple Pie ............................  90/=\n");
-        printf("\t22. Chocolate Cake .......................  80/=\n");
-        printf("\t23. Tiramisu .............................  110/=\n");
-        printf("\t24. Cheesecake ...........................  100/=\n");
-        printf("\t25. Glazed Donut .........................  50/=\n");
-        printf("\t26. Cookies ..............................  60/=\n");
-        printf("\t27. Chocolate Ice-cream ..................  60/=\n");
-        printf("\t28. Vanilla Ice-cream.....................  50/=\n");
+        printf("\t22. Brownie ..............................  80/=\n");
+        printf("\t23. Apple Pie ............................  90/=\n");
+        printf("\t24. Chocolate Cake .......................  80/=\n");
+        printf("\t25. Tiramisu .............................  110/=\n");
+        printf("\t26. Cheesecake ...........................  100/=\n");
+        printf("\t27. Glazed Donut .........................  50/=\n");
+        printf("\t28. Cookies ..............................  60/=\n");
+        printf("\t29. Chocolate Ice-cream ..................  60/=\n");
+        printf("\t30. Vanilla Ice-cream.....................  50/=\n");
         printf("\n\n\tOrder your item: (Enter 0 to finish order)\n");
         for(;;)
         {
@@ -203,7 +203,7 @@ void Bill_Payment()
         changer = cash-tokens[k];
         if(changer == 0)
         {
-            printf("\n\t\tThank you for your payment! Have a great day ahead!\n");
+            printf("\n\t\tThank you for your payment! Have a wonderful day ahead!\n");
         }
         else if (changer<0)
             {
@@ -244,7 +244,7 @@ void Bill_Payment()
 
             printf("\t\t  ");
             printf("-------------------------------------------------------------\n");
-            printf("\n\n\n\n\n\n\t\t\tThank you for your payment!\n\t\t   Have a great day ahead!\n",changer);
+            printf("\n\n\n\n\n\n\t\t\tThank you for your payment!\n\t\t   Have a wonderful day ahead!\n",changer);
 }
 printf("\n\n\t\t\t<Press (1) to pay another bill.>\n\t\t\t<Press (2) to go back to Main Menu Bar>\n\n\n\t\t\tEnter your choice: \t");
 scanf("%d",&n);
