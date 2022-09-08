@@ -23,9 +23,9 @@ Topics that need to be covered:
 - [x] Pointer
 - [x] Array
 - [x] String
-- [ ] Recursion
+- [x] Recursion
 - [x] Structure
-- [ ] File
+- [x] File
 <h2>How to run this project</h2>
 To run this project, user has to download the project and open it in code blocks and compile the main.c file. To see the integration of picture and data used, the directory has to be replaced appropriately where necessary. 
 
