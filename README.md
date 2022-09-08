@@ -23,7 +23,7 @@ Topics that need to be covered:
 - [x] Pointer
 - [x] Array
 - [x] String
-- [ ] Recursion
+- [x] Recursion
 - [x] Structure
 - [x] File
 <h2>How to run this project</h2>
